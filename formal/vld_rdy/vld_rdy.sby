@@ -1,0 +1,23 @@
+[tasks]
+proof
+proof_bmc
+
+[options]
+depth 10 
+proof: mode prove  
+proof_bmc: mode bmc
+
+[engines]
+proof: abc pdr 
+proof_bmc: smtbmc yices
+
+[script]
+ghdl --std=08 \
+vld_rdy.psl \
+vld_rdy.vhd -e vld_rdy 
+
+prep -top vld_rdy 
+
+[files]
+./vld_rdy.vhd
+./vld_rdy.psl
