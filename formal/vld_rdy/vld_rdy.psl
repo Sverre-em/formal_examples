@@ -12,6 +12,4 @@ vunit formal_vld_rdy(vld_rdy(rtl)) {
 	-----------------------------------------------------------------
 	-- Cover
   -----------------------------------------------------------------
- 	-- cover_receive_data : cover {not Rx_Valid; Rx_Valid};
-  -- cover_send_data: cover {status_out_rdy and status_out_vld; not status_out_vld};
 }
