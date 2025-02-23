@@ -1,0 +1,21 @@
+[tasks]
+proof
+proof_bmc
+
+[options]
+depth 10 
+proof: mode prove  
+proof_bmc: mode bmc
+
+[engines]
+proof: abc pdr 
+proof_bmc: smtbmc yices
+
+[script]
+ghdl --std=08 \
+safety.vhd -e safety 
+
+prep -top safety 
+
+[files]
+./safety.vhd
